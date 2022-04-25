@@ -31,17 +31,13 @@ const BLOG = {
     keywords: ['Craft.do', 'Craft Docs', 'Next.js', 'TailwindCSS', 'Blog']
   },
   analytics: {
-    provider: 'umami', // Currently support Umami, fill with 'umami' to enable or leave it empty to disable it.
+    provider: '', // Currently support Umami, fill with 'umami' to enable or leave it empty to disable it.
     umamiConfig: {
-      scriptUrl: 'https://monitor.zuolan.me/monitor.js', // The url of your Umami script
-      websiteId: '06a854f1-baed-43e4-b5c4-b398d17f9e24', // The website id of your Umami instance
+      scriptUrl: '', // The url of your Umami script
+      websiteId: '', // The website id of your Umami instance
     }
   },
   craftConfigShareUrl: 'https://www.craft.do/s/8gQSdBtbuPjpp1', // The link to share your craft config
-  telegramToken: process.env.TELEGRAM_TOKEN, // The token of your Telegram bot
-  telegramChatId: '263895784', // The chat id of your Telegram bot
-  supabaseUrl: 'https://fhoajfqegfiadonmhzig.supabase.co', // The url of your Supabase instance
-  supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzMTgwNzMxNywiZXhwIjoxOTQ3MzgzMzE3fQ.0PGPwiORFsKRthFFxnXrI53x9_T6jSxt3y98Daxgng4', // The anonymous key of your Supabase instance
   isProd: process.env.VERCEL_ENV === 'production' // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)
 }
 module.exports = BLOG
