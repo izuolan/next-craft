@@ -42,7 +42,7 @@ const Hero = () => {
                 </span>
               </button>
             </Link>
-            <Link passHref href='https://zuolan.me/next_craft_en'>
+            <Link passHref href='https://zuolan.me/en/next_craft_en'>
               <button className='bg-white shadow-md dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 inline-flex py-3 px-5 rounded-lg items-center'>
                 <svg
                   className='inline-block text-gray-600 dark:text-day h-8 w-8'
