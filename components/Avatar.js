@@ -88,7 +88,7 @@ const Avatar = (props) => (
       y='0'
       width='100%'
       height='100%'
-      clip-path='url(#shape)'
+      clipPath='url(#shape)'
       href='https://images.unsplash.com/photo-1574158622682-e40e69881006?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80'
       preserveAspectRatio='none'
     ></image>
