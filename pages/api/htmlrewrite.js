@@ -216,7 +216,7 @@ const bodyStr = `
     </label>
     <div class="navigation__background"></div>
 
-    <p class="navigation__title">${BLOG.notes}</p>
+    <p class="navigation__title">${BLOG.title}</p>
 
     <nav class="navigation__nav" role="navigation">
       <ul class="navigation__list">
