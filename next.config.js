@@ -38,11 +38,11 @@ module.exports = {
       },
       {
         source: '/api/share/:slug*',
-        destination: '/api/apirewrite?url=https://www.craft.do/api/share/:slug*',
+        destination: 'https://www.craft.do/api/share/:slug*',
       },
       {
         source: '/api/comments/:slug*',
-        destination: '/api/apirewrite?url=https://www.craft.do/api/comments/:slug*',
+        destination: 'https://www.craft.do/api/comments/:slug*',
       },
       {
         source: '/api/log/:slug*',
