@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+// import Image from 'next/image'
 import ImageFallback from './ImageFallBack'
 import { lang } from '@/lib/lang'
 import { useRouter } from 'next/router'
