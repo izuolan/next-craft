@@ -1,26 +1,27 @@
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
-export default function ImageFallback({ src, fallbackSrc, ...rest }) {
-  const [imgSrc, set_imgSrc] = useState(src);
+export default function ImageFallback({ src, fallbackSrc, alt, ...rest }) {
+  const [imgSrc, setImgSrc] = useState(src)
 
   useEffect(() => {
-    set_imgSrc(src);
-  }, [src]);
+    setImgSrc(src)
+  }, [src])
 
   return (
     <Image
       {...rest}
       src={imgSrc}
+      alt={alt}
       onLoadingComplete={(result) => {
         if (result.naturalWidth === 0) {
           // Broken image
-          set_imgSrc(fallbackSrc);
+          setImgSrc(fallbackSrc)
         }
       }}
       onError={() => {
-        set_imgSrc(fallbackSrc);
+        setImgSrc(fallbackSrc)
       }}
     />
-  );
+  )
 }
