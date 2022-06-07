@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import ImageFallback from './ImageFallBack.js'
+import ImageFallback from './ImageFallback.js'
 import { lang } from '@/lib/lang'
 import { useRouter } from 'next/router'
 
