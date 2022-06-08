@@ -19,12 +19,6 @@ const NotePost = ({ note }) => {
   return (
     <Link passHref href={`/post/${note.path}`}>
       <a key={craftSlug} className='mb-10 group h-60 flex items-end bg-gray-100 rounded-lg overflow-hidden relative p-4'>
-        {/* <Image
-          className='w-full h-full object-cover object-center absolute inset-0 group-hover:scale-105 transition duration-200'
-          src={`https://api.craft.do/render/preview/${craftSlug}`}
-          alt={`${note.title}`}
-          layout='fill'
-        /> */}
         <ImageFallback
           className='w-full h-full object-cover object-center absolute inset-0 group-hover:scale-105 transition duration-200'
           src={`https://api.craft.do/render/preview/${craftSlug}`}

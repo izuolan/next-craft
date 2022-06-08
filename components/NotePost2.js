@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import ImageFallback from './ImageFallback.js'
 import { lang } from '@/lib/lang'
 import { useRouter } from 'next/router'
 
@@ -21,9 +21,10 @@ const NotePost = ({ note }) => {
       <a key={craftSlug} className='mb-10 group flex items-end hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg overflow-hidden relative p-4'>
         <div className="w-full flex flex-col md:flex-row items-center gap-4 lg:gap-6">
           <div className="w-full md:w-24 lg:w-40 md:h-24 lg:h-40 h-56 block self-start shrink-0 overflow-hidden rounded-lg shadow-lg relative">
-            <Image
+            <ImageFallback
               className="object-cover object-center md:object-right absolute inset-0 group-hover:scale-110 transition duration-200"
               src={`https://api.craft.do/render/preview/${craftSlug}`}
+              fallbackSrc = '/secret_preview.png'
               alt={`${note.title}`}
               layout='fill'
             />
