@@ -7,7 +7,7 @@ const BLOG = {
   appearance: 'auto', // ['light', 'dark', 'auto'],
   font: 'sans-serif', // ['sans-serif', 'serif']
   lightBackground: '#F2F2F2', // use hex value, don't forget '#' e.g #fffefc
-  darkBackground: '#212936', // use hex value, don't forget '#'
+  darkBackground: '#222222', // use hex value, don't forget '#'
   since: 2021, // If leave this empty, current year will be used.
   autoCollapsedNavBar: false, // The automatically collapsed navigation bar
   ogImageGenerateURL: 'https://og-zl.vercel.app', // The link to generate OG image, don't end with a slash
@@ -19,8 +19,8 @@ const BLOG = {
   },
   notesLink: {
     index: '/',
-    blog: 'https://zuolan.me',
-    contact: 'https://zuolan.me/contact'
+    blog: 'https://zuolan.me/en',
+    contact: 'https://zuolan.me/en/contact'
   },
   socialLink: {
     twitter: 'https://twitter.com/izuolan',
