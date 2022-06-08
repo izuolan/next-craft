@@ -53,7 +53,7 @@ const NavBar = () => {
         {links.map(
           (link) => link.show && (
             <Link passHref key={link.id} href={link.to}>
-              <li className={`${activeMenu === link.to ? 'bg-gray-200 dark:bg-gray-700' : ''} hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer rounded-lg block py-1 px-2 nav`}>
+              <li className={`${activeMenu === link.to ? 'bg-gray-100 dark:bg-gray-700' : ''} hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer rounded-lg block py-1 px-2 nav`}>
                 <a className='font-light'>
                   {link.icon}
                   <span className='inline-block m-1'>{link.name}</span>

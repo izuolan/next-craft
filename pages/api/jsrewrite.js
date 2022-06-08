@@ -1,5 +1,4 @@
-// const fetch = require('node-fetch')
-// import { fetch } from 'node-fetch'
+import BLOG from '@/blog.config'
 
 module.exports = async (req, res) => {
   let { url } = req.query
@@ -10,7 +9,7 @@ module.exports = async (req, res) => {
 
   const response = await fetch(url)
   const originResText = await response.text()
-  const modifyResText = originResText
+  const removeCraftText = originResText
     .replace('"https://www.craft.do"', '"/"') // Replace logo url
     .replace(
       /children:\(0,vr.jsx\)\("svg",{/,
@@ -20,10 +19,17 @@ module.exports = async (req, res) => {
       /\("svg",\{className:e.className.*id:"blue"\}\)\]\}\)\}\)\}\)/,
       '("img",{className:e.className,alt:"logo",src:"/favicon.svg"})'
     ) // Replace loading logo to favicon.svg
-    .replace(
-      /className:"flex items-center justify-start flex-grow mr-2 overflow-hidden shrink"/g,
-      'style:{display:"none"},className:"flex items-center justify-start flex-grow mr-2 overflow-hidden shrink"'
-    ) // Hide title bar text
+
+    let modifyResText
+    if (BLOG.showTitlebarText) {
+      modifyResText = removeCraftText
+    } else {
+      modifyResText = removeCraftText
+        .replace(
+          /className:"flex items-center justify-start flex-grow mr-2 overflow-hidden shrink"/g,
+          'style:{display:"none"},className:"flex items-center justify-start flex-grow mr-2 overflow-hidden shrink"'
+        ) // Hide title bar text
+    }
 
   // don't show the "/b/*" and "/x/*" in the url
   // .replace('window.history.pushState({lukiNavIndex:c.length-1},w.breadcrumb,e.deepLinkUrl)', '""')

@@ -6,9 +6,10 @@ const BLOG = {
   lang: 'en-US', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW']
   appearance: 'auto', // ['light', 'dark', 'auto'],
   font: 'sans-serif', // ['sans-serif', 'serif']
-  lightBackground: '#F2F2F2', // use hex value, don't forget '#' e.g #fffefc
+  lightBackground: '#FFFFFF', // use hex value, don't forget '#' e.g #fffefc
   darkBackground: '#222222', // use hex value, don't forget '#'
   since: 2021, // If leave this empty, current year will be used.
+  showTitlebarText: false, // Craft Docs page show title bar text on desktop
   autoCollapsedNavBar: false, // The automatically collapsed navigation bar
   ogImageGenerateURL: 'https://og-zl.vercel.app', // The link to generate OG image, don't end with a slash
   craftConfigShareUrl: 'https://www.craft.do/s/8gQSdBtbuPjpp1', // The link to share your craft config
