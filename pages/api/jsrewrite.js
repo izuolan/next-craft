@@ -20,16 +20,16 @@ module.exports = async (req, res) => {
       '("img",{className:e.className,alt:"logo",src:"/favicon.svg"})'
     ) // Replace loading logo to favicon.svg
 
-    let modifyResText
-    if (BLOG.showTitlebarText) {
-      modifyResText = removeCraftText
-    } else {
-      modifyResText = removeCraftText
-        .replace(
-          /className:"flex items-center justify-start flex-grow mr-2 overflow-hidden shrink"/g,
-          'style:{display:"none"},className:"flex items-center justify-start flex-grow mr-2 overflow-hidden shrink"'
-        ) // Hide title bar text
-    }
+  let modifyResText
+  if (BLOG.showTitlebarText) {
+    modifyResText = removeCraftText
+  } else {
+    modifyResText = removeCraftText
+      .replace(
+        /className:"flex items-center justify-start flex-grow mr-2 overflow-hidden shrink"/g,
+        'style:{display:"none"},className:"flex items-center justify-start flex-grow mr-2 overflow-hidden shrink"'
+      ) // Hide title bar text
+  }
 
   // don't show the "/b/*" and "/x/*" in the url
   // .replace('window.history.pushState({lukiNavIndex:c.length-1},w.breadcrumb,e.deepLinkUrl)', '""')
