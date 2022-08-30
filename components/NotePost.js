@@ -1,23 +1,10 @@
 import Link from 'next/link'
 import ImageFallback from './ImageFallback.js'
-import { lang } from '@/lib/lang'
-import { useRouter } from 'next/router'
 
 const NotePost = ({ note }) => {
-  const { locale } = useRouter()
-  const t = lang[locale]
-  const craftSlug = note.link.slice(23)
-
-  if (note.title === 'NULL') {
-    return (
-      <div className='text-gray-400 text-xs font-light py-4'>
-        {t.ERROR.CRAFTDOCS_ERROR}
-      </div>
-    )
-  }
-
+  const craftSlug = note.url.slice(23)
   return (
-    <Link passHref href={`/post/${note.path}`}>
+    <Link passHref href={`/${note.slug}`}>
       <a key={craftSlug} className='mb-10 group h-60 flex items-end bg-gray-100 rounded-lg overflow-hidden relative p-4'>
         <ImageFallback
           className='w-full h-full object-cover object-center absolute inset-0 group-hover:scale-105 transition duration-200'

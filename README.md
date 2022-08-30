@@ -1,40 +1,21 @@
 # Next-Craft
 
-Using Craft.do API and Next.js to generate a static site, and manage all content in Craft.do.
+Customize your Craft.do share pages domains and manage everything in Craft.do one page!
 
 ## Demo
 
-[NextCraft](https://next-craft.vercel.app/)
+[Next Craft](https://next-craft.vercel.app/)
 
-[My Blog](https://zuolan.me/notes)
+[My Blog Notes Page](https://zuolan.me/notes)
 
 ## Quick Start
 
-### Create a config page
+1. **Duplicate** [this demo config page](https://www.craft.do/s/kQtcWqkv98cHhB) to your space, then **share** your config page.
+2. Star and Fork [Next-Craft](https://github.com/izuolan/next-craft) repo.
+3. Replace your **craftConfigShareUrl** in `blog.config.js` file.
+4. Deploy on [Vercel](https://vercel.com/) or other Hosting Providers.
 
-Create a new page in Craft.do, with a title of your choice (e.g. "Site Configuration"), and make it public, the content of the page should follow this format:
-
-- Post Title 1
-    - post-path-1
-    - the craft.do page share link (e.g. https://www.craft.do/s/xxxxxxxxx)
-- Post Title 2
-    - post-path-2
-    - the craft.do page share link (e.g. https://www.craft.do/s/ooooooooo)
-- ...
-
-Refer to this page for the format: [Demo Config](https://www.craft.do/s/8gQSdBtbuPjpp1), You can use backlinks in the title.
-
-### Deploy
-
-Clone or fork a copy of this repository to your computer or Github, and edit the contents of `blog.config.js`.
-
-Copy the new config page share link above and paste it to `craftConfigShareUrl` in `blog.config.js`.
-
-Replace favicon.svg, and favicon.ico in /public folder with your own
-
-Deploy to Vercel or elsewhere, done.
-
-More details in my blog: [Next Craft Guide](https://zuolan.me/en/next_craft_en)
+More details in [Next Craft](https://next-craft.vercel.app/).
 
 ## License
 

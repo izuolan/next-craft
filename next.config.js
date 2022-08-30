@@ -25,16 +25,16 @@ module.exports = {
   async rewrites() {
     return [
       {
-        source: '/post/:pathname',
-        destination: '/api/htmlrewrite?pathname=:pathname',
+        source: '/',
+        destination: '/api/htmlrewrite?pathname=index',
       },
       {
-        source: '/post/:pathname/b/:slug*',
-        destination: '/api/htmlrewrite?pathname=:pathname&slug=/b/:slug*',
+        source: '/b/:slug*',
+        destination: '/api/htmlrewrite?pathname=index&slug=/b/:slug*',
       },
       {
-        source: '/post/:pathname/x/:slug*',
-        destination: '/api/htmlrewrite?pathname=:pathname&slug=/x/:slug*',
+        source: '/x/:slug*',
+        destination: '/api/htmlrewrite?pathname=index&slug=/x/:slug*',
       },
       {
         source: '/api/:slug*',
@@ -63,6 +63,10 @@ module.exports = {
       {
         source: '/assets/js/analytics2.js',
         destination: 'https://www.craft.do/404',
+      },
+      {
+        source: '/:pathname*',
+        destination: '/api/htmlrewrite?pathname=:pathname*',
       }
     ]
   }

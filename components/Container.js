@@ -4,9 +4,11 @@ import BLOG from '@/blog.config'
 import Head from 'next/head'
 import PropTypes from 'prop-types'
 
-const Container = ({ children, layout, ...customMeta }) => {
+const Container = ({ children, siteConfigObj, ...customMeta }) => {
   const meta = {
-    title: BLOG.title,
+    title: siteConfigObj['Site Name'],
+    description: siteConfigObj['Site Description'],
+    link: siteConfigObj['Site Link'],
     type: 'website',
     ...customMeta
   }
@@ -32,56 +34,47 @@ const Container = ({ children, layout, ...customMeta }) => {
         <meta property='og:description' content={meta.description} />
         <meta
           property='og:url'
-          content={meta.slug ? `${BLOG.link}/${meta.slug}` : BLOG.link}
+          content={meta.slug ? `${meta.link}/${meta.slug}` : meta.link}
         />
-        <meta
+        {/* <meta
           property='og:image'
           content={`${BLOG.ogImageGenerateURL}/${encodeURIComponent(
             meta.title
           )}.png?theme=light&md=1&siteName=${encodeURIComponent(
-            BLOG.title
+            meta.title
           )}%20|%20${encodeURIComponent(
-            BLOG.description
+            meta.description
           )}&signature=${encodeURIComponent(
-            BLOG.link
+            meta.link
           )}`}
-        />
+        /> */}
         <meta property='og:type' content={meta.type} />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:description' content={meta.description} />
         <meta name='twitter:title' content={meta.title} />
-        <meta
+        {/* <meta
           name='twitter:image'
           content={`${BLOG.ogImageGenerateURL}/${encodeURIComponent(
             meta.title
           )}.png?theme=light&md=1&siteName=${encodeURIComponent(
-            BLOG.title
+            meta.title
           )}%20|%20${encodeURIComponent(
-            BLOG.description
+            meta.description
           )}&signature=${encodeURIComponent(
-            BLOG.link
+            meta.link
           )}`}
-        />
-        {meta.type === 'article' && (
-          <>
-            <meta
-              property='article:published_time'
-              content={meta.date || meta.createdTime}
-            />
-            <meta property='article:author' content={BLOG.author} />
-          </>
-        )}
+        /> */}
       </Head>
       <div
         className={`wrapper ${
           BLOG.font === 'serif' ? 'font-serif' : 'font-sans'
         }`}
       >
-        <Header navBarTitle={layout === 'blog' ? meta.title : null} />
+        <Header navBarTitle={meta.title} siteConfigObj={siteConfigObj} />
         <main className='m-auto flex-grow w-full transition-all max-w-2xl px-4'>
           {children}
         </main>
-        <Footer />
+        <Footer siteConfigObj={siteConfigObj} />
       </div>
     </div>
   )
