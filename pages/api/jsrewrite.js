@@ -19,9 +19,9 @@ module.exports = async (req, res) => {
       '("img",{className:e.className,alt:"logo",src:"/favicon.svg"})'
     ) // Replace loading logo to favicon.svg
     .replace(
-        /\(BM,\{isDarkMode:l,title:"Report page".*\(BM,\{hidden:!\$,isDarkMode:l,title:"Duplicate"/,
-        '(BM,{hidden:!$,isDarkMode:l,title:"Duplicate"'
-      ) // Hide "Report page" and "Edit in browser" items
+      /\(BM,\{isDarkMode:l,title:"Report page".*\(BM,\{hidden:!\$,isDarkMode:l,title:"Duplicate"/,
+      '(BM,{hidden:!$,isDarkMode:l,title:"Duplicate"'
+    ) // Hide "Report page" and "Edit in browser" items
 
   const modifyResText = siteConfigObj['Show Title Bar Text'] === 'True' ? removeCraftText : removeCraftText.replace(
     /className:"flex items-center justify-start flex-grow mr-2 overflow-hidden shrink"/g,
