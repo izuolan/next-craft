@@ -45,4 +45,9 @@
     "url": "https://github.com/izuolan/next-craft/issues",
     "email": "i@zuolan.me"
   }
-}
+  {
+    "scripts":  
+      "build": "[nuxt.js] build --output public"
+    }
+  }
+  
