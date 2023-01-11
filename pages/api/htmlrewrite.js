@@ -1,4 +1,5 @@
 import { getBlocksMaps } from '@/lib/getBlocksMaps'
+import BLOG from '@/blog.config'
 
 async function getBlockItem(path) {
   const { pagesJson, siteConfigObj } = await getBlocksMaps()
@@ -111,6 +112,13 @@ module.exports = async (req, res) => {
 }
 
 const headStr = `
+  <script
+    crossOrigin="anonymous"
+    defer="defer"
+    type="application/javascript"
+    src="${BLOG.analytics.umamiConfig.scriptUrl}"
+    data-website-id="${BLOG.analytics.umamiConfig.websiteId}"
+  ></script>
   <style>
     .navigation {
       position: fixed;
