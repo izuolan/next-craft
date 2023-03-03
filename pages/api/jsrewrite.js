@@ -15,10 +15,6 @@ module.exports = async (req, res) => {
     .replace('?utm_source=CraftShare', '') // Replace logo url
     .replace('flex items-start group"', 'flex items-start group",style:{visibility:"hidden"}') // Hide Craft.do upper right corner logo
     .replace(
-      /\("svg",\{className:e.className.*id:"blue"\}\)\]\}\)\}\)\}\)/,
-      '("img",{className:e.className,alt:"logo",src:"/favicon.svg"})'
-    ) // Replace loading logo to favicon.svg
-    .replace(
       /\(BM,\{isDarkMode:l,title:"Report page".*\(BM,\{hidden:!\$,isDarkMode:l,title:"Duplicate"/,
       '(BM,{hidden:!$,isDarkMode:l,title:"Duplicate"'
     ) // Hide "Report page" and "Edit in browser" items
