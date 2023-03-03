@@ -15,8 +15,12 @@ module.exports = async (req, res) => {
     .replace('?utm_source=CraftShare', '') // Replace logo url
     .replace('flex items-start group"', 'flex items-start group",style:{visibility:"hidden"}') // Hide Craft.do upper right corner logo
     .replace(
-      /\(BM,\{isDarkMode:l,title:"Report page".*\(BM,\{hidden:!\$,isDarkMode:l,title:"Duplicate"/,
-      '(BM,{hidden:!$,isDarkMode:l,title:"Duplicate"'
+      /function p\(e\)\{var t=e.color\|\|"currentColor";return\(0,i.jsx\)\("svg",\{className:e.className.*id:"blue"\}\)\]\}\)\}\)\}\)/,
+      'function p(e){var t=e.color||"currentColor";return(0,i.jsx)("img",{className:e.className,alt:"logo",src:"/favicon.svg"})'
+    ) // Replace loading logo to favicon.svg
+    .replace(
+      /\{isDarkMode:l,title:"Report page".*\{hidden:!Q,isDarkMode:l,title:"Duplicate"/,
+      '{hidden:!Q,isDarkMode:l,title:"Duplicate"'
     ) // Hide "Report page" and "Edit in browser" items
 
   const modifyResText = siteConfigObj['Show Title Bar Text'] === 'True' ? removeCraftText : removeCraftText.replace(
